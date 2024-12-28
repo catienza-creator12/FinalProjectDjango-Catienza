@@ -1,15 +1,13 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0fdf4; /* Light green background */
-    color: #2e7d32; /* Dark green text */
+    background-color: #f0fdf4;
+    color: #2e7d32;
 }
 
-/* Navbar Styles */
 nav {
-    background-color: #2e7d32; /* Dark green background */
+    background-color: #2e7d32;
     padding: 10px 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -26,7 +24,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff; /* White text */
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
@@ -35,23 +33,21 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Container Styles */
 .container {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #ffffff; /* White background for content */
-    border: 1px solid #c8e6c9; /* Light green border */
+    background-color: #ffffff;
+    border: 1px solid #c8e6c9;
     border-radius: 5px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Buttons */
 button, a.button {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #66bb6a; /* Medium green */
-    color: #ffffff; /* White text */
+    background-color: #66bb6a;
+    color: #ffffff;
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -60,24 +56,21 @@ button, a.button {
 }
 
 button:hover, a.button:hover {
-    background-color: #4caf50; /* Darker green */
+    background-color: #4caf50;
 }
 
-/* Links */
 a {
-    color: #2e7d32; /* Dark green links */
+    color: #2e7d32;
 }
 
 a:hover {
-    color: #1b5e20; /* Even darker green */
+    color: #1b5e20;
 }
 
-/* Headings */
 h1, h2, h3 {
-    color: #1b5e20; /* Dark green headings */
+    color: #1b5e20;
 }
 
-/* Forms */
 form {
     display: flex;
     flex-direction: column;
@@ -86,7 +79,7 @@ form {
 
 form input, form textarea, form select {
     padding: 10px;
-    border: 1px solid #c8e6c9; /* Light green border */
+    border: 1px solid #c8e6c9;
     border-radius: 5px;
     font-size: 16px;
 }
@@ -95,7 +88,6 @@ form button {
     align-self: flex-start;
 }
 
-/* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -103,20 +95,20 @@ table {
 }
 
 table th, table td {
-    border: 1px solid #c8e6c9; /* Light green border */
+    border: 1px solid #c8e6c9;
     padding: 10px;
     text-align: left;
 }
 
 table th {
-    background-color: #2e7d32; /* Dark green background */
-    color: #ffffff; /* White text */
+    background-color: #2e7d32;
+    color: #ffffff;
 }
 
 table tr:nth-child(even) {
-    background-color: #f0fdf4; /* Light green */
+    background-color: #f0fdf4;
 }
 
 table tr:hover {
-    background-color: #e8f5e9; /* Slightly darker light green */
+    background-color: #e8f5e9;
 }
