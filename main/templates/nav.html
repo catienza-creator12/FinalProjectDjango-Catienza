@@ -1,5 +1,22 @@
 <nav>
-    <ul>
+    <ul class="nav-list">
+        <li><a href="{% url 'homepage' %}">Home</a></li> 
         <li><a href="{% url 'service-list' %}">Services</a></li>
+        <li><a href="{% url 'feedback-form' %}">Feedback</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'appointment-create' %}">Book Appointment</a></li>
+            <li>
+                <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background: none;
+                     border: none; color: blue; 
+                     text-decoration: underline; cursor: pointer;">Logout</button>
+                </form>
+            </li>
+            <li><a href="#">Welcome, {{ user.username }}</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        {% endif %}
     </ul>
 </nav>

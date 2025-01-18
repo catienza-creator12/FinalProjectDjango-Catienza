@@ -1,13 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Services</h1>
-<ul>
-    {% for service in object_list %}
-        <li>
-            <a href="{% url 'service-detail' service.id %}">{{ service.name }}</a>
-        </li>
-    {% endfor %}
-</ul>
-<a href="{% url 'service-create' %}">Add Service</a>
+<h1 style="text-align: center;">Services</h1>
+<div style="text-align: center;">
+    <ul style="list-style-type: none; padding: 0; display: inline-block; text-align: left;">
+        {% for service in object_list %}
+            <li style="margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; display: flex; align-items: center;">
+                <a href="{% url 'service-detail' service.id %}" style="text-decoration: none; color: black;">
+                    {% if service.image %}
+                        <img src="{{ service.image.url }}" alt="{{ service.name }}" style="width:500px; height:auto; margin-right: 15px; border-radius: 8px;">
+                    {% endif %}
+                    <div>
+                        <strong style="font-size: 18px;">{{ service.name }}</strong>
+                        <div style="color: green; font-weight: bold;">₱{{ service.price }}</div>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="{% url 'service-create' %}" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+        Add Service
+    </a>
+</div>
 {% endblock %}

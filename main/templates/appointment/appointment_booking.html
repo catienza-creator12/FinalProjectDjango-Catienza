@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="container">
+        <h1>Book an Appointment</h1>
+        {% if user.is_authenticated %}
+            <form method="POST" action="{% url 'appointment-create' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="customer-phone">Phone Number:</label>
+                    <input 
+                        type="tel" 
+                        id="customer-phone" 
+                        name="customer_phone" 
+                        value="{{ user.customer.phone|default_if_none:'' }}" 
+                        placeholder="Enter your phone number" 
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Choose a Service:</label>
+                    <select id="service" name="service">
+                        {% for service in services %}
+                            <option value="{{ service.id }}">{{ service.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Select Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Choose Payment Method:</label>
+                    <select id="payment-method" name="payment_method">
+                        <option value="cash">Cash to Cash Face to Face</option>
+                        <option value="gcash">Gcash Payment</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Book Appointment</button>
+            </form>
+        {% else %}
+            <p>You need to be logged in to book an appointment.</p>
+            <a href="{% url 'login' %}" class="btn">Log In</a>
+            <a href="{% url 'signup' %}" class="btn">Create an Account</a>
+        {% endif %}
+    </div>
+</body>
+</html>

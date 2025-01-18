@@ -56,6 +56,7 @@ ROOT_URLCONF = 'catienza_project.urls'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -74,6 +75,18 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'catienza_project.wsgi.application'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+
+from django.urls import reverse_lazy
+LOGIN_REDIRECT_URL = reverse_lazy('service-list')
+
+LOGOUT_REDIRECT_URL = reverse_lazy('service-list')
+
 
 
 # Database

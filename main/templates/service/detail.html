@@ -2,7 +2,13 @@
 
 {% block content %}
 <h1>{{ object.name }}</h1>
+
+{% if object.image %}
+    <img src="{{ object.image.url }}" alt="{{ object.name }}" style="max-width:300px; height:auto;">
+{% endif %}
+
 <p>{{ object.description }}</p>
+<p><strong>Price:</strong> ₱{{ object.price }}</p>
 <a href="{% url 'service-update' object.id %}">Edit</a>
 <a href="{% url 'service-delete' object.id %}">Delete</a>
 {% endblock %}
